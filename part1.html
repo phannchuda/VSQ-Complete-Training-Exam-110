@@ -6,7 +6,7 @@
 <div class="c hide" id="result"><h1>ผลสอบ Part 1</h1><div id="score" class="score"></div><h2 id="status" style="text-align:center"></h2><p id="weak"></p></div>
 <iframe name="postFrame" style="display:none"></iframe></div>
 <script>
-const API="https://script.google.com/macros/s/AKfycbxmSioJEnBoIcfAELwm_SgK-pxo8HoZ2HwMztglI2Uky-jqLIfmM5WEB0gN034zK9bL/exec",PART=1,KEY="vsq_p1_v1";let S={};let timer;
+const API="https://script.google.com/macros/s/AKfycbz0WuHyrUXesqJIceNS3sWS6BtRQDyc2DwXmbw73L1sYMGnt5jrhm7LPNMQo9Fs5BWJ/exec"
 function jp(p){return new Promise((res,rej)=>{let cb="cb"+Date.now()+Math.floor(Math.random()*1e6),s=document.createElement("script"),t=setTimeout(()=>{cl();rej()},20000);function cl(){clearTimeout(t);delete window[cb];s.remove()}window[cb]=d=>{cl();res(d)};p.callback=cb;s.src=API+"?"+new URLSearchParams(p);s.onerror=()=>{cl();rej()};document.body.appendChild(s)})}
 const v=id=>document.getElementById(id).value.trim();
 function toggleOtherRole(){let show=v("role")==="อื่นๆ";document.getElementById("otherRoleWrap").style.display=show?"block":"none"}
