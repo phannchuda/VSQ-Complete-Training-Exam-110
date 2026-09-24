@@ -110,7 +110,7 @@ function jp(params){
   return new Promise((resolve,reject)=>{
     const cb="vsqcb_"+Date.now()+"_"+Math.floor(Math.random()*1e6);
     const s=document.createElement("script");
-    const timer=setTimeout(()=>{cleanup();reject(new Error("หมดเวลาการเชื่อมต่อ"))},25000);
+    const timer=setTimeout(()=>{cleanup();reject(new Error("หมดเวลาการเชื่อมต่อ"))},60000);
     function cleanup(){clearTimeout(timer);delete window[cb];if(s.parentNode)s.remove()}
     window[cb]=(data)=>{cleanup();resolve(data)};
     params.callback=cb;
@@ -120,6 +120,7 @@ function jp(params){
   });
 }
 function saveLocal(){localStorage.setItem(LOCAL_KEY,JSON.stringify(S))}
+function packAnswers(a){return Object.keys(a).sort().map(k=>k+":"+a[k]).join(",")}
 function loadLocal(){
   try{const x=JSON.parse(localStorage.getItem(LOCAL_KEY)||"null");if(x&&x.profile){
     fullName.value=x.profile.fullName||"";nickName.value=x.profile.nickName||"";
@@ -164,7 +165,7 @@ let saveTimer;
 function saveServer(){
   saved.textContent="กำลังบันทึก...";
   clearTimeout(saveTimer);saveTimer=setTimeout(async()=>{
-    try{const d=await jp({action:"save",part:PART,examId:S.examId,answers:JSON.stringify(S.answers)});saved.textContent=d.ok?"บันทึกแล้ว ✓":"บันทึกไม่สำเร็จ"}
+    try{const d=await jp({action:"save",part:PART,examId:S.examId,answers:packAnswers(S.answers)});saved.textContent=d.ok?"บันทึกแล้ว ✓":"บันทึกไม่สำเร็จ"}
     catch(e){saved.textContent="เก็บไว้ในเครื่องแล้ว"}
   },500);
 }
@@ -174,7 +175,7 @@ async function submitExam(){
   if(!confirm("ยืนยันส่งข้อสอบ Part 1 ? เมื่อส่งแล้วจะแก้ไขไม่ได้"))return;
   submitBtn.disabled=true;submitBtn.textContent="กำลังส่ง...";
   try{
-    const d=await jp({action:"submit",part:PART,examId:S.examId,answers:JSON.stringify(S.answers)});
+    const d=await jp({action:"submit",part:PART,examId:S.examId,answers:packAnswers(S.answers)});
     if(!d.ok)throw new Error(d.error||"ส่งข้อสอบไม่สำเร็จ");
     localStorage.removeItem(LOCAL_KEY);showResult(d.result,d.summary);
   }catch(e){alert("❌ "+e.message);submitBtn.disabled=false;submitBtn.textContent="ส่งข้อสอบ"}
