@@ -1,25 +1,196 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VSQ Exam Part 1</title>
-<style>body{font-family:Arial,sans-serif;background:#f4f7fb;margin:0;color:#172033}.w{max-width:850px;margin:auto;padding:20px}.c{background:white;padding:25px;border-radius:16px;box-shadow:0 6px 25px #0001}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}input,select{width:100%;box-sizing:border-box;padding:12px;margin-top:5px;border:1px solid #ccd5e3;border-radius:9px;background:white;font-size:15px}.b{background:#2563eb;color:white;border:0;padding:12px 18px;border-radius:9px;font-weight:bold}.s{background:#e8eef8;border:0;padding:12px 18px;border-radius:9px;font-weight:bold}.hide{display:none}.q{font-size:20px;font-weight:bold;line-height:1.5;margin:22px 0}.o{display:block;border:1px solid #dbe3ef;padding:13px;border-radius:10px;margin:9px 0}.nav{display:flex;justify-content:space-between;margin-top:20px}.bar0{height:8px;background:#e5e7eb;border-radius:9px;overflow:hidden}.bar{height:100%;background:#2563eb}.muted{color:#64748b}.top{display:flex;justify-content:space-between}.score{text-align:center;font-size:45px;font-weight:bold}.pass{color:#15803d}.fail{color:#b91c1c}@media(max-width:600px){.g{grid-template-columns:1fr}}</style></head><body><div class="w">
-<div class="c" id="login"><h1>VSQ Complete Training Exam</h1><p class="muted">Part 1 • 50 ข้อ • ผ่าน 80%</p><div class="g">
-<label>ชื่อ–นามสกุล<input id="fullName"></label><label>ชื่อเล่น<input id="nickName"></label><label>สาขา<select id="branch"><option value="">-- เลือกสาขา --</option><option value="ปิ่นเกล้า">ปิ่นเกล้า</option><option value="เซ็นทรัลเวสต์วิลล์">เซ็นทรัลเวสต์วิลล์</option><option value="เมเจอร์ รัชโยธิน">เมเจอร์ รัชโยธิน</option><option value="เดอะพรอมานาด">เดอะพรอมานาด</option><option value="เกตเวย์ เอกมัย">เกตเวย์ เอกมัย</option><option value="ซีคอนศรีนครินทร์">ซีคอนศรีนครินทร์</option><option value="เดอะมอลล์ บางกะปิ">เดอะมอลล์ บางกะปิ</option><option value="ฟิวเจอร์พาร์ค รังสิต">ฟิวเจอร์พาร์ค รังสิต</option><option value="เซ็นทรัล พระราม 2">เซ็นทรัล พระราม 2</option><option value="เซ็นทรัล บางนา">เซ็นทรัล บางนา</option><option value="สยามสแควร์วัน">สยามสแควร์วัน</option><option value="เซ็นทรัล อีสวิลล์">เซ็นทรัล อีสวิลล์</option><option value="เซ็นทรัล ลาดพร้าว">เซ็นทรัล ลาดพร้าว</option><option value="เซ็นทรัล แจ้งวัฒนะ">เซ็นทรัล แจ้งวัฒนะ</option><option value="พาซิโอ้ กาญจนาภิเษก">พาซิโอ้ กาญจนาภิเษก</option><option value="เซ็นทรัล พระราม 3">เซ็นทรัล พระราม 3</option><option value="เอ็มควอเทียร์">เอ็มควอเทียร์</option><option value="เดอะมอลล์ บางแค">เดอะมอลล์ บางแค</option><option value="เซ็นทรัลเวสเกต">เซ็นทรัลเวสเกต</option><option value="เดอะมอลล์ ท่าพระ">เดอะมอลล์ ท่าพระ</option><option value="เซ็นทรัล รามอินทรา">เซ็นทรัล รามอินทรา</option><option value="เทอมินอลอโศก">เทอมินอลอโศก</option><option value="เซ็นทรัล นครปฐม">เซ็นทรัล นครปฐม</option><option value="พระราม 9">พระราม 9</option><option value="เมกา บางนา">เมกา บางนา</option><option value="เซ็นทรัลเวิล">เซ็นทรัลเวิล</option><option value="วันแบง ค็อก">วันแบง ค็อก</option><option value="เดอะมอลล์งามวงศ์วาน">เดอะมอลล์งามวงศ์วาน</option><option value="ทองหล่อ">ทองหล่อ</option><option value="ดุสิต เซ็นทรัลพาร์ค">ดุสิต เซ็นทรัลพาร์ค</option><option value="เลียบด่วนรามอินทรา">เลียบด่วนรามอินทรา</option><option value="ไม่ประจำสาขา">ไม่ประจำสาขา</option><option value="ออฟฟิศ">ออฟฟิศ</option></select></label><label>ตำแหน่ง<select id="role" onchange="toggleOtherRole()"><option value="">-- เลือกตำแหน่ง --</option><option value="ผู้จัดการสาขา">ผู้จัดการสาขา</option><option value="รองผู้จัดการสาขา">รองผู้จัดการสาขา</option><option value="ผู้ช่วยผู้จัดการสาขา (ฟร้อน 3)">ผู้ช่วยผู้จัดการสาขา (ฟร้อน 3)</option><option value="ผู้ประสานงานคลินิก (เสมียน)">ผู้ประสานงานคลินิก (เสมียน)</option><option value="ฟร้อนเลเซอร์ขน">ฟร้อนเลเซอร์ขน</option><option value="พนักงานต้อนรับ (ฟร้อนท์เลเซอร์พิโค)">พนักงานต้อนรับ (ฟร้อนท์เลเซอร์พิโค)</option><option value="นักกายภาพ (SP)">นักกายภาพ (SP)</option><option value="นักกายภาพ (LS)">นักกายภาพ (LS)</option><option value="นักกายภาพและเลเซอร์ (LSP)">นักกายภาพและเลเซอร์ (LSP)</option><option value="พยาบาล">พยาบาล</option><option value="ผู้ช่วยแพทย์">ผู้ช่วยแพทย์</option><option value="ผู้ช่วยโกน">ผู้ช่วยโกน</option><option value="ผู้ช่วยแพทย์ Pico">ผู้ช่วยแพทย์ Pico</option><option value="ล่าม">ล่าม</option><option value="ผู้ช่วยพยาบาล (ANA)">ผู้ช่วยพยาบาล (ANA)</option><option value="อื่นๆ">อื่นๆ (เฉพาะออฟฟิศ)</option></select></label><label id="otherRoleWrap" style="display:none;grid-column:1/-1">ระบุตำแหน่งอื่นๆ (เฉพาะออฟฟิศ)<input id="otherRole" placeholder="พิมพ์ชื่อตำแหน่ง"></label></div><p class="muted">กรอกข้อมูลให้ตรงกันทุกครั้ง เพื่อให้ระบบบันทึกและกลับมาทำต่อได้ถูกคน</p><button class="b" onclick="start()">เริ่มทำข้อสอบ Part 1</button><p id="msg" class="muted"></p></div>
-<div class="c hide" id="exam"><div class="top"><b id="count"></b><span id="save" class="muted"></span></div><div class="bar0"><div id="bar" class="bar"></div></div><div id="qt" class="q"></div><div id="opts"></div><div class="nav"><button class="s" id="prev" onclick="move(-1)">← ก่อนหน้า</button><button class="b" id="next" onclick="move(1)">ถัดไป →</button></div></div>
-<div class="c hide" id="result"><h1>ผลสอบ Part 1</h1><div id="score" class="score"></div><h2 id="status" style="text-align:center"></h2><p id="weak"></p></div>
-<iframe name="postFrame" style="display:none"></iframe></div>
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VSQ Complete Training Exam — Part 1</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,"Noto Sans Thai",sans-serif;background:#f4f8fc;color:#17324d}
+.wrap{max-width:900px;margin:auto;padding:24px} .card{background:white;border-radius:18px;padding:26px;box-shadow:0 8px 28px #183b5b18;margin:16px 0}
+h1{margin:0 0 8px;color:#1267a8} .muted{color:#65788a} label{display:block;font-weight:700;margin:14px 0 6px}
+input,select{width:100%;padding:13px;border:1px solid #c8d6e3;border-radius:10px;font-size:16px;background:white}
+button{border:0;border-radius:10px;padding:12px 18px;font-size:16px;font-weight:700;cursor:pointer}
+.primary{background:#1674b8;color:white} .secondary{background:#e8f1f8;color:#174d73} .danger{background:#b42318;color:white}
+.row{display:flex;gap:10px;justify-content:space-between;align-items:center} .hide{display:none!important}
+.progress{height:10px;background:#e6edf3;border-radius:99px;overflow:hidden} .bar{height:100%;background:#1674b8}
+.q{font-size:20px;font-weight:700;line-height:1.55;margin:18px 0}
+.opt{display:block;border:1px solid #d8e2ea;border-radius:12px;padding:13px;margin:10px 0;cursor:pointer;line-height:1.45}
+.opt:has(input:checked){border:2px solid #1674b8;background:#eef7ff} .opt input{width:auto;margin-right:9px}
+.score{font-size:34px;font-weight:800;color:#1267a8} .pass{color:#137333} .fail{color:#b42318}
+@media(max-width:650px){.wrap{padding:10px}.card{padding:18px}.row{flex-wrap:wrap}}
+</style>
+</head>
+<body><div class="wrap">
+<div class="card">
+<h1>VSQ Complete Training Exam — Part 1</h1>
+<div class="muted">50 ข้อ • ผ่าน 40/50 (80%) • ทำทีละข้อ</div>
+</div>
+
+<div id="profile" class="card">
+<label>ชื่อ–นามสกุล</label><input id="fullName">
+<label>ชื่อเล่น</label><input id="nickName">
+<label>สาขา</label><select id="branch"><option value="">เลือกสาขา</option><option value="ปิ่นเกล้า">ปิ่นเกล้า</option>
+<option value="เซ็นทรัลเวสต์วิลล์">เซ็นทรัลเวสต์วิลล์</option>
+<option value="เมเจอร์ รัชโยธิน">เมเจอร์ รัชโยธิน</option>
+<option value="เดอะพรอมานาด">เดอะพรอมานาด</option>
+<option value="เกตเวย์ เอกมัย">เกตเวย์ เอกมัย</option>
+<option value="ซีคอนศรีนครินทร์">ซีคอนศรีนครินทร์</option>
+<option value="เดอะมอลล์ บางกะปิ">เดอะมอลล์ บางกะปิ</option>
+<option value="ฟิวเจอร์พาร์ค รังสิต">ฟิวเจอร์พาร์ค รังสิต</option>
+<option value="เซ็นทรัล พระราม 2">เซ็นทรัล พระราม 2</option>
+<option value="เซ็นทรัล บางนา">เซ็นทรัล บางนา</option>
+<option value="สยามสแควร์วัน">สยามสแควร์วัน</option>
+<option value="เซ็นทรัล อีสวิลล์">เซ็นทรัล อีสวิลล์</option>
+<option value="เซ็นทรัล ลาดพร้าว">เซ็นทรัล ลาดพร้าว</option>
+<option value="เซ็นทรัล แจ้งวัฒนะ">เซ็นทรัล แจ้งวัฒนะ</option>
+<option value="พาซิโอ้ กาญจนาภิเษก">พาซิโอ้ กาญจนาภิเษก</option>
+<option value="เซ็นทรัล พระราม 3">เซ็นทรัล พระราม 3</option>
+<option value="เอ็มควอเทียร์">เอ็มควอเทียร์</option>
+<option value="เดอะมอลล์ บางแค">เดอะมอลล์ บางแค</option>
+<option value="เซ็นทรัลเวสเกต">เซ็นทรัลเวสเกต</option>
+<option value="เดอะมอลล์ ท่าพระ">เดอะมอลล์ ท่าพระ</option>
+<option value="เซ็นทรัล รามอินทรา">เซ็นทรัล รามอินทรา</option>
+<option value="เทอมินอลอโศก">เทอมินอลอโศก</option>
+<option value="เซ็นทรัล นครปฐม">เซ็นทรัล นครปฐม</option>
+<option value="พระราม 9">พระราม 9</option>
+<option value="เมกา บางนา">เมกา บางนา</option>
+<option value="เซ็นทรัลเวิล">เซ็นทรัลเวิล</option>
+<option value="วันแบง ค็อก">วันแบง ค็อก</option>
+<option value="เดอะมอลล์งามวงศ์วาน">เดอะมอลล์งามวงศ์วาน</option>
+<option value="ทองหล่อ">ทองหล่อ</option>
+<option value="ดุสิต เซ็นทรัลพาร์ค">ดุสิต เซ็นทรัลพาร์ค</option>
+<option value="เลียบด่วนรามอินทรา">เลียบด่วนรามอินทรา</option>
+<option value="ไม่ประจำสาขา">ไม่ประจำสาขา</option>
+<option value="ออฟฟิศ">ออฟฟิศ</option></select>
+<label>ตำแหน่ง</label><select id="role" onchange="toggleOther()"><option value="">เลือกตำแหน่ง</option><option value="ผู้จัดการสาขา">ผู้จัดการสาขา</option>
+<option value="รองผู้จัดการสาขา">รองผู้จัดการสาขา</option>
+<option value="ผู้ช่วยผู้จัดการสาขา (ฟร้อน 3)">ผู้ช่วยผู้จัดการสาขา (ฟร้อน 3)</option>
+<option value="ผู้ประสานงานคลินิก (เสมียน)">ผู้ประสานงานคลินิก (เสมียน)</option>
+<option value="ฟร้อนเลเซอร์ขน">ฟร้อนเลเซอร์ขน</option>
+<option value="พนักงานต้อนรับ (ฟร้อนท์เลเซอร์พิโค)">พนักงานต้อนรับ (ฟร้อนท์เลเซอร์พิโค)</option>
+<option value="นักกายภาพ (SP)">นักกายภาพ (SP)</option>
+<option value="นักกายภาพ (LS)">นักกายภาพ (LS)</option>
+<option value="นักกายภาพและเลเซอร์ (LSP)">นักกายภาพและเลเซอร์ (LSP)</option>
+<option value="พยาบาล">พยาบาล</option>
+<option value="ผู้ช่วยแพทย์">ผู้ช่วยแพทย์</option>
+<option value="ผู้ช่วยโกน">ผู้ช่วยโกน</option>
+<option value="ผู้ช่วยแพทย์ Pico">ผู้ช่วยแพทย์ Pico</option>
+<option value="ล่าม">ล่าม</option>
+<option value="ผู้ช่วยพยาบาล (ANA)">ผู้ช่วยพยาบาล (ANA)</option>
+<option value="อื่นๆ">อื่นๆ</option></select>
+<div id="otherWrap" class="hide"><label>ระบุตำแหน่ง</label><input id="otherRole"></div>
+<div style="margin-top:20px"><button class="primary" onclick="startExam()">เริ่มทำข้อสอบ Part 1</button></div>
+<div id="msg" class="muted" style="margin-top:12px"></div>
+</div>
+
+<div id="exam" class="card hide">
+<div class="row"><b id="counter"></b><span id="saved" class="muted">พร้อมบันทึก</span></div>
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div id="qtext" class="q"></div><div id="options"></div>
+<div class="row" style="margin-top:20px">
+<button class="secondary" onclick="prevQ()">← ก่อนหน้า</button>
+<button id="nextBtn" class="primary" onclick="nextQ()">ถัดไป →</button>
+<button id="submitBtn" class="danger hide" onclick="submitExam()">ส่งข้อสอบ</button>
+</div>
+</div>
+
+<div id="result" class="card hide">
+<h2>ผลสอบ Part 1</h2><div id="score" class="score"></div><h2 id="status"></h2>
+<div id="weak"></div><div id="overall"></div>
+</div>
+</div>
+
 <script>
-const API="https://script.google.com/macros/s/AKfycbz0WuHyrUXesqJIceNS3sWS6BtRQDyc2DwXmbw73L1sYMGnt5jrhm7LPNMQo9Fs5BWJ/exec"
-function jp(p){return new Promise((res,rej)=>{let cb="cb"+Date.now()+Math.floor(Math.random()*1e6),s=document.createElement("script"),t=setTimeout(()=>{cl();rej()},20000);function cl(){clearTimeout(t);delete window[cb];s.remove()}window[cb]=d=>{cl();res(d)};p.callback=cb;s.src=API+"?"+new URLSearchParams(p);s.onerror=()=>{cl();rej()};document.body.appendChild(s)})}
-const v=id=>document.getElementById(id).value.trim();
-function toggleOtherRole(){let show=v("role")==="อื่นๆ";document.getElementById("otherRoleWrap").style.display=show?"block":"none"}
-function finalRole(){return v("role")==="อื่นๆ" ? "อื่นๆ (ออฟฟิศ): "+v("otherRole") : v("role")}
-async function start(){let profile={fullName:v("fullName"),nickName:v("nickName"),branch:v("branch"),role:finalRole()};if(v("role")==="อื่นๆ" && v("branch")!=="ออฟฟิศ"){msg.textContent="ตำแหน่งอื่นๆ เลือกได้เฉพาะสาขา ออฟฟิศ เท่านั้น";return}if(v("role")==="อื่นๆ" && !v("otherRole")){msg.textContent="กรุณาระบุตำแหน่ง";return}if(Object.values(profile).some(x=>!x)){msg.textContent="กรุณากรอกข้อมูลให้ครบ";return}msg.textContent="กำลังเปิดข้อสอบ...";try{let d=await jp({action:"start",part:1,...profile});if(!d.ok){msg.textContent=d.message;return}S={examId:d.examId,questions:d.questions,order:d.order,optionOrder:d.optionOrder,answers:d.answers||{},index:+(d.currentIndex||0),profile};localStorage.setItem(KEY,JSON.stringify(S));login.classList.add("hide");exam.classList.remove("hide");render()}catch(e){msg.textContent="เชื่อมต่อระบบไม่สำเร็จ"}}
-function cur(){let id=S.order[S.index];return S.questions.find(x=>x.id===id)}
-function esc(x){let d=document.createElement("div");d.textContent=x;return d.innerHTML}
-function render(){let q=cur(),map=Object.fromEntries(q.options.map(x=>[x.id,x])),ids=S.optionOrder[q.id]||q.options.map(x=>x.id);count.textContent=`ข้อ ${S.index+1} / ${S.order.length}`;bar.style.width=((S.index+1)/S.order.length*100)+"%";qt.textContent=q.text;opts.innerHTML=ids.map((id,i)=>`<label class="o"><input type="radio" name="a" ${S.answers[q.id]===id?"checked":""} onchange="pick('${q.id}','${id}')"> <b>${String.fromCharCode(65+i)}.</b> ${esc(map[id].text)}</label>`).join("");prev.disabled=S.index===0;next.textContent=S.index===S.order.length-1?"ส่งข้อสอบ":"ถัดไป →"}
-function pick(q,o){S.answers[q]=o;localStorage.setItem(KEY,JSON.stringify(S));queue()}
-function move(n){if(n===1&&S.index===S.order.length-1){submit();return}S.index=Math.max(0,Math.min(S.order.length-1,S.index+n));localStorage.setItem(KEY,JSON.stringify(S));queue();render();scrollTo(0,0)}
-function queue(){save.textContent=navigator.onLine?"กำลังบันทึก...":"ออฟไลน์ — บันทึกไว้ในเครื่องแล้ว";clearTimeout(timer);timer=setTimeout(saveNow,700)}
-async function saveNow(){localStorage.setItem(KEY,JSON.stringify(S));if(!navigator.onLine)return;try{let a=btoa(unescape(encodeURIComponent(JSON.stringify(S.answers))));let d=await jp({action:"save",examId:S.examId,part:1,index:S.index,answers:a});save.textContent=d.ok?"บันทึกแล้ว "+new Date().toLocaleTimeString("th-TH"):"บันทึกไว้ในเครื่องแล้ว"}catch(e){save.textContent="บันทึกไว้ในเครื่องแล้ว"}}
-async function submit(){let u=S.order.filter(x=>!S.answers[x]);if(u.length){alert("ยังตอบไม่ครบ "+u.length+" ข้อ");return}if(!confirm("ต้องการส่งข้อสอบ Part 1 ใช่หรือไม่?"))return;await saveNow();let token=(crypto.randomUUID?crypto.randomUUID():Date.now()+"_"+Math.random()),f=document.createElement("form");f.method="POST";f.action=API;f.target="postFrame";let p={action:"submit",examId:S.examId,part:1,token,answers:JSON.stringify(S.answers)};Object.entries(p).forEach(([k,v])=>{let i=document.createElement("input");i.name=k;i.value=v;f.appendChild(i)});document.body.appendChild(f);f.submit();f.remove();poll(token,0)}
-async function poll(token,n){if(n>25){alert("ส่งคำตอบแล้ว กรุณารอสักครู่");return}try{let d=await jp({action:"result",token});if(d.ready){exam.classList.add("hide");result.classList.remove("hide");score.textContent=`${d.correct}/${d.total} (${d.percent}%)`;status.textContent=d.status;status.className=d.pass?"pass":"fail";weak.textContent=(d.weakTopics||[]).length?"หัวข้อที่ควรทบทวน: "+d.weakTopics.map(x=>x.topic+" "+x.percent+"%").join(" • "):"ไม่มีหัวข้อที่ต่ำกว่า 80%";localStorage.removeItem(KEY);return}}catch(e){}setTimeout(()=>poll(token,n+1),1200)}
-window.addEventListener("online",()=>{if(S.examId)saveNow()});
+const API="https://script.google.com/macros/s/AKfycbwZruqyW7udshfh4pMoJSuQXDr1tY0oaXjWWuyES3V-oPXdKHBu0pj5uQQf68mBrLGb/exec", PART=1, LOCAL_KEY="vsq_exam_p1_v2";
+let S={examId:"",questions:[],answers:{},index:0,profile:null};
+
+function val(id){return document.getElementById(id).value.trim()}
+function toggleOther(){document.getElementById("otherWrap").classList.toggle("hide",val("role")!=="อื่นๆ")}
+function finalRole(){return val("role")==="อื่นๆ" ? val("otherRole") : val("role")}
+function jp(params){
+  return new Promise((resolve,reject)=>{
+    const cb="vsqcb_"+Date.now()+"_"+Math.floor(Math.random()*1e6);
+    const s=document.createElement("script");
+    const timer=setTimeout(()=>{cleanup();reject(new Error("หมดเวลาการเชื่อมต่อ"))},25000);
+    function cleanup(){clearTimeout(timer);delete window[cb];if(s.parentNode)s.remove()}
+    window[cb]=(data)=>{cleanup();resolve(data)};
+    params.callback=cb;
+    s.src=API+"?"+new URLSearchParams(params).toString();
+    s.onerror=()=>{cleanup();reject(new Error("เชื่อมต่อไม่สำเร็จ"))};
+    document.body.appendChild(s);
+  });
+}
+function saveLocal(){localStorage.setItem(LOCAL_KEY,JSON.stringify(S))}
+function loadLocal(){
+  try{const x=JSON.parse(localStorage.getItem(LOCAL_KEY)||"null");if(x&&x.profile){
+    fullName.value=x.profile.fullName||"";nickName.value=x.profile.nickName||"";
+    branch.value=x.profile.branch||""; 
+    const known=[...role.options].some(o=>o.value===x.profile.role);
+    if(known) role.value=x.profile.role; else {role.value="อื่นๆ";otherRole.value=x.profile.role||"";toggleOther()}
+  }}catch(e){}
+}
+async function startExam(){
+  const profile={fullName:val("fullName"),nickName:val("nickName"),branch:val("branch"),role:finalRole()};
+  if(!profile.fullName||!profile.nickName||!profile.branch||!profile.role){msg.textContent="กรุณากรอกข้อมูลให้ครบ";return}
+  msg.textContent="กำลังเชื่อมต่อ...";
+  try{
+    const d=await jp({action:"start",part:PART,...profile});
+    if(!d.ok) throw new Error(d.error||"เริ่มข้อสอบไม่ได้");
+    S.examId=d.examId;S.profile=profile;
+    if(d.locked){showResult(d.result,d.summary);return}
+    S.questions=d.questions;S.answers=d.savedAnswers||{};
+    const local=JSON.parse(localStorage.getItem(LOCAL_KEY)||"null");
+    if(local&&local.examId===S.examId&&local.answers){S.answers={...S.answers,...local.answers};S.index=Number(local.index||0)}
+    saveLocal(); profileEl(false); render();
+  }catch(e){msg.textContent="❌ "+e.message}
+}
+function profileEl(show){document.getElementById("profile").classList.toggle("hide",!show);document.getElementById("exam").classList.toggle("hide",show)}
+function render(){
+  const q=S.questions[S.index]; if(!q)return;
+  counter.textContent=`ข้อ ${S.index+1} / ${S.questions.length}`;
+  bar.style.width=((S.index+1)*100/S.questions.length)+"%";
+  qtext.textContent=q.text; options.innerHTML="";
+  q.options.forEach(o=>{
+    const lab=document.createElement("label");lab.className="opt";
+    const r=document.createElement("input");r.type="radio";r.name="ans";r.value=o.id;r.checked=S.answers[q.id]===o.id;
+    r.onchange=()=>{S.answers[q.id]=o.id;saveLocal();saveServer()};
+    lab.appendChild(r);lab.appendChild(document.createTextNode(o.text));options.appendChild(lab);
+  });
+  nextBtn.classList.toggle("hide",S.index===S.questions.length-1);
+  submitBtn.classList.toggle("hide",S.index!==S.questions.length-1);
+}
+function prevQ(){if(S.index>0){S.index--;saveLocal();render()}}
+function nextQ(){if(S.index<S.questions.length-1){S.index++;saveLocal();render()}}
+let saveTimer;
+function saveServer(){
+  saved.textContent="กำลังบันทึก...";
+  clearTimeout(saveTimer);saveTimer=setTimeout(async()=>{
+    try{const d=await jp({action:"save",part:PART,examId:S.examId,answers:JSON.stringify(S.answers)});saved.textContent=d.ok?"บันทึกแล้ว ✓":"บันทึกไม่สำเร็จ"}
+    catch(e){saved.textContent="เก็บไว้ในเครื่องแล้ว"}
+  },500);
+}
+async function submitExam(){
+  const missing=S.questions.filter(q=>!S.answers[q.id]).length;
+  if(missing){alert("ยังตอบไม่ครบ "+missing+" ข้อ");return}
+  if(!confirm("ยืนยันส่งข้อสอบ Part 1 ? เมื่อส่งแล้วจะแก้ไขไม่ได้"))return;
+  submitBtn.disabled=true;submitBtn.textContent="กำลังส่ง...";
+  try{
+    const d=await jp({action:"submit",part:PART,examId:S.examId,answers:JSON.stringify(S.answers)});
+    if(!d.ok)throw new Error(d.error||"ส่งข้อสอบไม่สำเร็จ");
+    localStorage.removeItem(LOCAL_KEY);showResult(d.result,d.summary);
+  }catch(e){alert("❌ "+e.message);submitBtn.disabled=false;submitBtn.textContent="ส่งข้อสอบ"}
+}
+function showResult(r,summary){
+  document.getElementById("profile").classList.add("hide");document.getElementById("exam").classList.add("hide");result.classList.remove("hide");
+  score.textContent=`${r.correct}/${r.total} (${r.percent}%)`;
+  status.textContent=r.status;status.className=r.passed?"pass":"fail";
+  const w=r.weakTopics||[];weak.innerHTML=w.length?"<b>หัวข้อที่ควรทบทวน:</b> "+w.map(x=>x.topic+" "+x.percent+"%").join(" • "):"<b>ไม่มีหัวข้อที่ต่ำกว่า 80%</b>";
+  if(summary){
+    let h="<hr><h3>สรุปผล</h3>";
+    if(summary.part1)h+=`Part 1: ${summary.part1.correct}/${summary.part1.total} (${summary.part1.percent}%)<br>`;
+    if(summary.part2)h+=`Part 2: ${summary.part2.correct}/${summary.part2.total} (${summary.part2.percent}%)<br>`;
+    if(summary.overall)h+=`<b>รวม: ${summary.overall.correct}/${summary.overall.total} (${summary.overall.percent}%)</b><br><b>สถานะรวม: ${summary.status}</b>`;
+    overall.innerHTML=h;
+  }
+}
+loadLocal();
 </script></body></html>
